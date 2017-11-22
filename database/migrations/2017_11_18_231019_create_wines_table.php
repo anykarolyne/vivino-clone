@@ -13,15 +13,15 @@ class CreateWinesTable extends Migration
     public function up()
     {
         Schema::create('wines', function (Blueprint $table) {
+
             $table->increments('id');
-
-            $table->integer('of_user')->unsigned();
-            $table->foreign('of_user')->references('id')->on('users');
-
+            $table->string('email_user');
+            $table->foreign('email_user')->references('email')->on('users');
             $table->string('producer');
             $table->string('name');
+            $table->float('price');
             $table->string('country');
-            $table->string('type');
+            $table->enum('type', ['Tinto', 'Branco', 'Rose', 'Espumante', 'Sobremesa', 'Porto']);
             $table->string('style');
             $table->string('grape');
             $table->string('harmonization');

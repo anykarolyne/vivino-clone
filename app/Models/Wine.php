@@ -10,7 +10,7 @@ class Wine extends Model
 	
     protected $table = 'wines';
 
-   protected $fillable = ['of_user', 'producer','name', 'country', 'type', 'style', 'grape', 'photo', 'harmonization'];
+   protected $fillable = ['email_user', 'producer','name', 'price', 'country', 'type', 'style', 'grape', 'photo', 'harmonization'];
 
   
 }
