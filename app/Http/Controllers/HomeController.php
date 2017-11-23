@@ -27,6 +27,17 @@ class HomeController extends Controller
 
         return view('admin.dashboard', compact('wines'));
     }
+    public function home()
+    {
+
+        $id = Auth::user()->id;
+        $login = Auth::user()->login;
+
+        $wines = Wine::where('of_user', $id)->get();
+
+
+        return view('protect.slide', compact('wines','login'));
+    }
 }
 
 

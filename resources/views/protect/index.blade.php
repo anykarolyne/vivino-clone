@@ -51,18 +51,17 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav animated wow fadeInUp animated animated" data-wow-duration="1200ms" data-wow-delay="500ms">
                                 <li>
-                                        <i class="fa fa-search">
-                                        </i>
+                                    <i class="fa fa-search">
+                                    </i>
                                     <input type="text" name="pesquisar" placeholder="Pesquisar">
                                 </li>
-                                <li style="float: right">
-                                    <a href="{{ url('login') }}">
-                                        <i class="fa">
-                                            Login
-                                        </i>
+
+                                <li style="float: right;">
+                                    <a href="{{ url('usuario/admin') }}">
+                                    {{{ isset(Auth::user()->login) ? Auth::user()->login : Auth::user()->email }}}
                                     </a>
-                                    <a href="{{ url('cadastro') }}">
-                                        <i class="fa">Cadastro</i>
+                                    <a href="{{ url('logout') }}">
+                                        <i class="fa fa-sign-out">Sair</i>
                                     </a>
                                 </li>
                                  <!--<div class="price-range">price-range
@@ -83,9 +82,6 @@
                         </div>
                         <!--/.navbar-collapse-->
 
-                        <div class="login-nav" style="float: right;" data-wow-delay=".5s">
-
-                        </div>
                     </nav>
 
                     <!-- search-scripts -->

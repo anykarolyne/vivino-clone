@@ -42,7 +42,9 @@ Route::get('/', function ()
 Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 
 		//pagina principal
-		Route::get('inicio', ['as'=>'index', 'uses'=>'HomeController@index']);
+
+        Route::get('home', ['as'=>'home', 'uses'=>'HomeController@home']);
+		Route::get('admin', ['as'=>'index', 'uses'=>'HomeController@index']);
 
 		Route::get('editar', ['as'=>'editar_usuario', 'uses'=>'UserController@edit']);
 		Route::post('atualizar', ['as'=>'atualizar_usuario', 'uses'=>'UserController@update']);

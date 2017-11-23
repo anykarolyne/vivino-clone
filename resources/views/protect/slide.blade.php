@@ -1,4 +1,4 @@
-@extends('public.public')
+@extends('protect.index')
 @section('content')
 
 
@@ -8,7 +8,7 @@
            <div class="flexslider">
              <ul class="slides">
                    <li>
-                       <img style="width: 347px; height: 387px" src="{{ URL::asset('public/images/4444.png') }}"
+                   <img style="width: 347px; height: 387px" src="{{ URL::asset('public/images/4444.png') }}"
                    <h3>Compre sua próxima garrafa de vinho com a ajuda de 27 milhões de amigos</h3>
                    </li>
           </ul>
