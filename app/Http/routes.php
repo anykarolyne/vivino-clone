@@ -33,8 +33,13 @@ Route::post('redefinir/senha', 'Auth\PasswordController@postReset');
 
 
 Route::get('/', function () 
-{
-    return view('public.slide');
+{   if(Auth::guest()){
+        return view('public.slide');
+    }
+    else{
+    return Redirect::to('usuario/home');
+    }
+
 });
 
 
